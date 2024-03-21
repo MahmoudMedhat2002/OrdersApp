@@ -106,5 +106,22 @@ namespace OrdersApp.Tests.Controllers
 			result.Should().NotBeNull();
 			result.Should().BeOfType<Task<IActionResult>>();
 		}
+
+		[Fact]
+		public void OrderController_GetAllOrders_ReturnsActionResult()
+		{
+			//arrange
+			int limit = 1;
+			var orderController = new OrderController(_orderService);
+		
+			//act
+		
+			var result = orderController.GetAllOrders(limit);
+		
+			//assert
+		
+			result.Should().NotBeNull();
+			result.Should().BeOfType<Task<IActionResult>>();
+		}
 	}
 }
